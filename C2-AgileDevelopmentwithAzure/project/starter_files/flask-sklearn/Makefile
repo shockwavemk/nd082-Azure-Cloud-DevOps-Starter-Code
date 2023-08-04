@@ -1,12 +1,13 @@
 setup:
 	python3 -m venv ~/.udacity-devops
+	source ~/.udacity-devops/bin/activate
 
 install:
 	pip install --upgrade pip &&\
-		pip install -r requirements.txt
+	pip install -r requirements.txt
 
 test:
-	#python -m pytest -vv --cov=myrepolib tests/*.py
+	python -m pytest -vv tests/*.py
 	#python -m pytest --nbval notebook.ipynb
 
 
