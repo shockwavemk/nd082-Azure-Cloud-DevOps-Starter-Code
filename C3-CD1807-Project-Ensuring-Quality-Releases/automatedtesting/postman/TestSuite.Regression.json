@@ -1,0 +1,846 @@
+{
+	"info": {
+		"_postman_id": "e517948a-bc03-4b03-84fc-7032b7427080",
+		"name": "RegressionTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All Activities",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get All Activities endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Activities",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Activities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Authors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get All Authors endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Authors",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Authors"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Books",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get All Books endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Books",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All CoverPhotos",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get All CoverPhotos endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/CoverPhotos",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"CoverPhotos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Users",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get All Users endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Users",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Activity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Create Activity endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Activities?activity=activity_udacity",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Activities"
+					],
+					"query": [
+						{
+							"key": "activity",
+							"value": "activity_udacity"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Create Author endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Authors?author=author_udacity",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Authors"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "author_udacity"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Create Book endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Books?book=book_udacity",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Books"
+					],
+					"query": [
+						{
+							"key": "book",
+							"value": "book_udacity"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create CoverPhoto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Create CoverPhoto endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/CoverPhotos?coverPhoto=cover_udacity.jpeg",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"CoverPhotos"
+					],
+					"query": [
+						{
+							"key": "coverPhoto",
+							"value": "cover_udacity.jpeg"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Create CoverPhoto endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Users?user=user_udacity",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Users"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "user_udacity"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Activity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get Activity endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Activities/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Activities",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get Author endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Authors/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Authors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get Book endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Books/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get CoverPhoto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get CoverPhoto endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/CoverPhotos/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"CoverPhotos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Get User endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Users/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Activity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Update Activity endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Activities/1?activity=updated_udacity_2",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Activities",
+						"1"
+					],
+					"query": [
+						{
+							"key": "activity",
+							"value": "updated_udacity_2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Update Author endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Authors?author=author_udacity_2&id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Authors"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "author_udacity_2"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Update Book endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Books?book=book_udacity_2&id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Books"
+					],
+					"query": [
+						{
+							"key": "book",
+							"value": "book_udacity_2"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update CoverPhoto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Update CoverPhoto endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/CoverPhotos?coverPhoto=cover_udacity_2.png&id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"CoverPhotos"
+					],
+					"query": [
+						{
+							"key": "coverPhoto",
+							"value": "cover_udacity_2.png"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Update User endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Users?user=User_udacity_2&id=1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Users"
+					],
+					"query": [
+						{
+							"key": "user",
+							"value": "User_udacity_2"
+						},
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Activity",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Delete Activity endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Activities/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Activities",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Author",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Delete Author endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Authors/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Authors",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Delete Book endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Books/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Books",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete CoverPhoto",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Delete CoverPhoto endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/CoverPhotos/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"CoverPhotos",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Delete User endpoint response code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/Users/1",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"Users",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

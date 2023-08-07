@@ -1,0 +1,14 @@
+{
+	"id": " bf344d98-604d-4125-a17a-1d7879d52c62",
+	"name": "udacityc3",
+	"values": [
+		{
+			"key": "url",
+			"value": "http://udacityc3-appservice.azurewebsites.net/api",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2023-07-10T05:59:03.427Z",
+	"_postman_exported_using": "Postman/10.15.0"
+}
