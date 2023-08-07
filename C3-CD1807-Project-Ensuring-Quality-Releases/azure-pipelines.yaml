@@ -219,7 +219,7 @@ stages:
         deploy:
           steps:
           - download: current
-            artifact: drop-ui-tests     # ToDo: Change/provide a name
+            artifact: drop-ui-tests
             
           - task: Bash@3
             inputs:
@@ -237,7 +237,7 @@ stages:
                 if [ ! -d "$DIR" ]; then
                     mkdir app
                 fi
-                mv $(Pipeline.Workspace)/drop-uitests/$(Build.BuildId)-uitests.zip app
+                mv $(Pipeline.Workspace)/drop-ui-tests/$(Build.BuildId)-uitests.zip app
                 cd app
                 unzip -o $(Build.BuildId)-uitests.zip
                 FILE=/home/testuser/app/chromedriver_linux64.zip
@@ -250,5 +250,5 @@ stages:
                 export PATH=$PATH:/home/testuser/app
                 echo "Starting Selenium Tests"
                 python3 add_remove_from_cart.py >> selenium.log
-                catg selenium.log
+                cat selenium.log
                 echo "Completed Selenium Tests. Check selenium.log for results."
