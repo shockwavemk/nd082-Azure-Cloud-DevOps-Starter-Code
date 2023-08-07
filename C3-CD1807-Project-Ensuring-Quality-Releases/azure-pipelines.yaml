@@ -39,7 +39,7 @@ stages:
         workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
         backendAzureRmResourceGroupName: 'udacityc3'
-        backendAzureRmStorageAccountName: 'tfstate234786975'
+        backendAzureRmStorageAccountName: 'tfstate560224419'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
 
