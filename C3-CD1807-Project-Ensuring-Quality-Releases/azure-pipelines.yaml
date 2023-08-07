@@ -58,6 +58,42 @@ stages:
         workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/terraform/environments/test'
         environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
 
+    #--------------------------------------------#    
+    # Postman - Install Newman
+    - task: CmdLine@2
+      displayName: Install Newman
+      inputs:
+        script: |
+          sudo apt-get -y install npm
+          sudo npm install -g newman
+        workingDirectory: '$(System.DefaultWorkingDirectory)'
+
+    # Postman Data Validation Test Suite
+    - task: CmdLine@2
+      displayName: Run Data Validation Tests
+      continueOnError: true
+      inputs:
+        script: 'newman run TestSuite.Data-Validation.json -e Test.environment.json --reporters cli,junit --reporter-junit-export TEST-DataValidation.xml'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/postman'
+    
+    # Postman Regression Test Suite
+    - task: CmdLine@2
+      displayName: Run Regression Tests
+      continueOnError: true
+      inputs:
+        script: 'newman run TestSuite.Regression.json -e Test.environment.json --reporters cli,junit --reporter-junit-export TEST-Regression.xml'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/postman'
+    
+    # Postman - Publish Results 
+    # ToDo: Complete the task as explained here: https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-test-results?view=azure-devops&tabs=trx%2Cyaml#yaml-snippet
+    - task: PublishTestResults@2
+      inputs:
+        testResultsFormat: 'JUnit'
+        testResultsFiles: '**/TEST-*.xml'
+        searchFolder: 'automatedtesting/postman'
+        mergeTestResults: true
+        testRunTitle: 'Publish results'
+
     #--------------------------------------------#
     # Selenium (UI) Test Suite - Archive the package  
     # "ArchiveFiles@2" picks up the web package and archives it.
@@ -108,7 +144,6 @@ stages:
   jobs:
   #--------------------------------------------#  
   # Deploy FakeRestAPI Web App
-  # ToDo: Provide <environment name> you created in your DevOps project
   - deployment: FakeRestAPI
     environment: 'test-vm'
     strategy:
@@ -122,38 +157,6 @@ stages:
               appName: 'udacityc3-AppService'
               appType: webApp
               package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
-          #--------------------------------------------#    
-          # Postman - Install Newman
-          - task: CmdLine@2
-            displayName: Install Newman
-            inputs:
-              script: |
-                sudo apt-get -y install npm
-                sudo npm install -g newman
-              workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/postman'
-          # Postman Data Validation Test Suite
-          - task: CmdLine@2
-            displayName: Run Data Validation Tests
-            continueOnError: true
-            inputs:
-              script: 'newman run TestSuite.Data-Validation.json -e Test.environment.json --reporters cli,junit --reporter-junit-export TEST-DataValidation.xml'
-              workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/postman'
-          # Postman Regression Test Suite
-          - task: CmdLine@2
-            displayName: Run Regression Tests
-            continueOnError: true
-            inputs:
-              script: 'newman run TestSuite.Regression.json -e Test.environment.json --reporters cli,junit --reporter-junit-export TEST-Regression.xml'
-              workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/postman'
-          # Postman - Publish Results 
-          # ToDo: Complete the task as explained here: https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-test-results?view=azure-devops&tabs=trx%2Cyaml#yaml-snippet
-          - task: PublishTestResults@2
-            inputs:
-              testResultsFormat: 'JUnit'
-              testResultsFiles: '**/TEST-*.xml'
-              searchFolder: 'automatedtesting/postman'
-              mergeTestResults: true
-              testRunTitle: 'Publish results'
 
           #--------------------------------------------#    
           # Jmeter - Install Jmeter
@@ -161,6 +164,7 @@ stages:
             displayName: 'Install JMeter 5.6.2'
             inputs:
               jmeterVersion: '5.6.2'
+
           # Jmeter - Endurance Test Suite     
           - task: Bash@3
             displayName: 'Endurance Test Suite'
@@ -172,12 +176,14 @@ stages:
                   -l endurance-test-report/endurance-results.jtl \
                   -e \
                   -o endurance-test-report
+
           # Publish - Endurance Test Suite
           - task: publishhtmlreport@1
             displayName: 'Publish Endurance Test Results'
             inputs:
               htmlType: 'Jmeter'
               JmeterReportsPath: '$(Build.SourcesDirectory)/endurance-test-report'
+
           # Jmeter - Stress Test Suite    
           - task: Bash@3
             displayName: 'Stress Test Suite'
@@ -189,6 +195,7 @@ stages:
                   -l stress-test-report/stress-results.jtl \
                   -e \
                   -o stress-test-report
+                  
           # Publish - Stress Test Suite
           - task: publishhtmlreport@1
             displayName: 'Publish Stress Test Results'
@@ -208,7 +215,6 @@ stages:
               
   #--------------------------------------------#  
   # Selenium | Functional UI Tests
-  # ToDo: 
   - deployment: VMDeploy
     displayName: Selenium Tests
     environment:
