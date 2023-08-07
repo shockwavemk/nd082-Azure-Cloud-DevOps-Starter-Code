@@ -1,5 +1,5 @@
-resource "azurerm_network_interface" "" {
-  name                = "${var.nic_name}"
+resource "azurerm_network_interface" "test" {
+  name                = "${var.application_type}-${var.resource_type}-nic"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group_name}"
 
@@ -11,14 +11,14 @@ resource "azurerm_network_interface" "" {
   }
 }
 
-resource "azurerm_linux_virtual_machine" "" {
-  name                = "${var.vm_name}"
+resource "azurerm_linux_virtual_machine" "test" {
+  name                = "${var.application_type}-${var.resource_type}-vm"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group_name}"
   size                = "Standard_DS2_v2"
   source_image_id       = "${var.packer_image}"
   admin_username      = "${var.admin_username}"
-  network_interface_ids = [azurerm_network_interface.nic.id]
+  network_interface_ids = [azurerm_network_interface.test.id]
   disable_password_authentication = true
   admin_ssh_key {
     username   = "${var.admin_username}"

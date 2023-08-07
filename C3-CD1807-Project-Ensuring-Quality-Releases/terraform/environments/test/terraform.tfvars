@@ -16,4 +16,4 @@ address_space = ["10.5.0.0/16"]
 address_prefix_test = "10.5.1.0/24"
 
 admin_username = "adminuser"
-packer_image = "/subscriptions/848baf1b-afe1-4486-aa6c-1544eadf1fb6/resourceGroups/udacityc3/providers/Microsoft.Compute/galleries/udacity/images/udacity"
+packer_image = "/subscriptions/848baf1b-afe1-4486-aa6c-1544eadf1fb6/resourceGroups/udacityc3/providers/Microsoft.Compute/galleries/udacityc3/images/udacityc3"
