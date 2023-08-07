@@ -36,14 +36,14 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'init'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/terraform/environments/test'
         backendServiceArm: '$(azureServiceConnectionId)'
         backendAzureRmResourceGroupName: 'udacityc3'
         backendAzureRmStorageAccountName: 'tfstate234786975'
         backendAzureRmContainerName: 'tfstate'
         backendAzureRmKey: 'test.terraform.tfstate'
 
-    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV3@3
+    - task: TerraformTaskV3@3
       displayName: Terraform validate
       inputs:
         provider: 'azurerm'
@@ -55,7 +55,7 @@ stages:
       inputs:
         provider: 'azurerm'
         command: 'apply'
-        workingDirectory: '$(System.DefaultWorkingDirectory)/terraform/environments/test'
+        workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/terraform/environments/test'
         environmentServiceNameAzureRM: '$(azureServiceConnectionId)'
 
     #--------------------------------------------#
@@ -64,7 +64,7 @@ stages:
     - task: ArchiveFiles@2
       displayName: 'Archive UI Tests'
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting/selenium'
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases//automatedtesting/selenium'
         includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-uitests.zip'
@@ -78,7 +78,7 @@ stages:
     - task: ArchiveFiles@2
       displayName: 'Archive FakeRestAPI'
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/fakerestapi'
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/jmeter/fakerestapi'
         includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-fakerestapi.zip'
@@ -92,12 +92,12 @@ stages:
     - task: ArchiveFiles@2
       displayName: 'Archive PerformanceTestSuite'
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/automatedtesting/jmeter/test-suite'
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/jmeter/test-suite'
         includeRootFolder: false
         archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/$(Build.BuildId)-perftests.zip'
     # JMeter Test Suite - Publish    
-    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip
+    - publish: $(Build.ArtifactStagingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/$(Build.BuildId)-perftests.zip
       displayName: 'Upload Package'
       artifact: drop-perftests
 
@@ -132,21 +132,21 @@ stages:
               script: |
                 sudo apt-get -y install npm
                 sudo npm install -g newman
-              workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/postman'
           # Postman Data Validation Test Suite
           - task: CmdLine@2
             displayName: Run Data Validation Tests
             continueOnError: true
             inputs:
               script: 'newman run TestSuite.Data-Validation.json -e Test.environment.json --reporters cli,junit --reporter-junit-export TEST-DataValidation.xml'
-              workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/postman'
           # Postman Regression Test Suite
           - task: CmdLine@2
             displayName: Run Regression Tests
             continueOnError: true
             inputs:
               script: 'newman run TestSuite.Regression.json -e Test.environment.json --reporters cli,junit --reporter-junit-export TEST-Regression.xml'
-              workingDirectory: '$(System.DefaultWorkingDirectory)/automatedtesting/postman'
+              workingDirectory: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/postman'
           # Postman - Publish Results 
           # ToDo: Complete the task as explained here: https://learn.microsoft.com/en-us/azure/devops/pipelines/tasks/test/publish-test-results?view=azure-devops&tabs=trx%2Cyaml#yaml-snippet
           - task: PublishTestResults@2
