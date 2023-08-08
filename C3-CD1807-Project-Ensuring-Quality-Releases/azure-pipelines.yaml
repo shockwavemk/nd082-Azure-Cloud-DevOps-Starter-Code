@@ -190,9 +190,11 @@ stages:
               script: |
                 jmeter -n \
                   -t $(Pipeline.Workspace)/perftests/EnduranceTest.jmx \
-                  -l endurance-test-report/endurance-results.jtl \
+                  -l $(Pipeline.Workspace)/perftests/endurance-test-report/endurance-results.jtl \
                   -e \
-                  -o endurance-test-report
+                  -o $(Pipeline.Workspace)/perftests/endurance-test-report
+                ls -lisah $(Pipeline.Workspace)/perftests
+                ls -lisah $(Pipeline.Workspace)/perftests/endurance-test-report
 
           # Publish - Endurance Test Suite
           - task: publishhtmlreport@1
@@ -209,9 +211,11 @@ stages:
               script: |
                 jmeter -n \
                   -t $(Pipeline.Workspace)/perftests/StressTest.jmx \
-                  -l stress-test-report/stress-results.jtl \
+                  -l $(Pipeline.Workspace)/perftests/stress-test-report/stress-results.jtl \
                   -e \
-                  -o stress-test-report
+                  -o $(Pipeline.Workspace)/perftests/stress-test-report
+                ls -lisah $(Pipeline.Workspace)/perftests
+                ls -lisah $(Pipeline.Workspace)/perftests/stress-test-report
                   
           # Publish - Stress Test Suite
           - task: publishhtmlreport@1
