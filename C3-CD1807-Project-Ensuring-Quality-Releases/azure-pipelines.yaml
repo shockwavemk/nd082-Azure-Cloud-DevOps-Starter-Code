@@ -177,7 +177,9 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                unzip -o $(Pipeline.Workspace)/drop-perftests/$(Build.BuildId)-perftests.zip $(Pipeline.Workspace)/perftests
+                ls -lisah $(Pipeline.Workspace)
+                ls -lisah $(Pipeline.Workspace)/drop-perftests
+                unzip -o $(Pipeline.Workspace)/drop-perftests/$(Build.BuildId)-perftests.zip
 
           # Jmeter - Endurance Test Suite     
           - task: Bash@3
