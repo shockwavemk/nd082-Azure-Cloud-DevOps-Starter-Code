@@ -150,6 +150,9 @@ stages:
       runOnce:
         deploy:
           steps:
+          - download: current
+            artifact: drop-fakerestapi
+
           - task: AzureWebApp@1
             displayName: 'Deploy Azure Web App'
             inputs:
