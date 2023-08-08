@@ -131,9 +131,9 @@ stages:
         rootFolderOrFile: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/jmeter/test-suite'
         includeRootFolder: false
         archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/$(Build.BuildId)-perftests.zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip'
     # JMeter Test Suite - Publish    
-    - publish: $(Build.ArtifactStagingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/$(Build.BuildId)-perftests.zip
+    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests.zip
       displayName: 'Upload Package'
       artifact: drop-perftests
 
