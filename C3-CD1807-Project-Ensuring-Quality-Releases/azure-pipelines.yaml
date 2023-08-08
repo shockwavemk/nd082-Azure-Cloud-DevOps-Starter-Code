@@ -90,7 +90,7 @@ stages:
       inputs:
         testResultsFormat: 'JUnit'
         testResultsFiles: '**/TEST-*.xml'
-        searchFolder: 'automatedtesting/postman'
+        searchFolder: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/postman'
         mergeTestResults: true
         testRunTitle: 'Publish results'
 
@@ -153,13 +153,13 @@ stages:
           - download: current
             artifact: drop-fakerestapi
 
-          - task: AzureWebApp@1
-            displayName: 'Deploy Azure Web App'
-            inputs:
-              azureSubscription: '$(azureServiceConnectionId)'
-              appName: 'udacityc3-AppService'
-              appType: webApp
-              package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
+          #- task: AzureWebApp@1
+          #  displayName: 'Deploy Azure Web App'
+          #  inputs:
+          #    azureSubscription: '$(azureServiceConnectionId)'
+          #    appName: 'udacityc3-AppService'
+          #    appType: webApp
+          #    package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
 
           #--------------------------------------------#
           - download: current
@@ -230,8 +230,8 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                ls -lah endurance-test-report/
-                ls -lah stress-test-report/
+                ls -lisah $(Pipeline.Workspace)/perftests/endurance-test-report/
+                ls -lisah $(Pipeline.Workspace)/perftests/stress-test-report
                 cat jmeter.log
               
   #--------------------------------------------#  
