@@ -1,28 +1,25 @@
 {
 	"info": {
 		"_postman_id": "58eb6d9c-352d-11ee-be56-0242ac120002",
-		"name": "ValidationTest",
+		"name": "DataValidationTest",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Get All Activities",
+			"name": "Get activities",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
 							"var jsonData = pm.response.json();",
-							"",
 							"var expectedActivities = 30;",
-							"",
 							"pm.test(\"Found activities with IDs 1 - \" + expectedActivities, function () {",
 							"    for (i = 0; i < expectedActivities; i++) {",
 							"        pm.expect(jsonData[i].ID).to.eql(i+1);",
 							"    }",
 							"});",
-							"",
-							"pm.test(\"Total activities found: \" + expectedActivities, function () {",
+							"pm.test(\"Activities found: \" + expectedActivities, function () {",
 							"    pm.expect(jsonData.length).to.eql(expectedActivities);",
 							"});"
 						],
@@ -46,22 +43,14 @@
 			"response": []
 		},
 		{
-			"name": "Get All Authors",
+			"name": "Get authors",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"var jsonData = pm.response.json();",
-							"",
-							"// Since this is fake API I observed the getAllAuthors returns unpredictable values, sometimes 400, sometimes 600 or also 800.",
-							"// Hence it makes no sense to test total number of authors.",
-							"//var expectedAuthors = 600;",
-							"//pm.test(\"Total authors found: \" + expectedAuthors, function () {",
-							"//    pm.expect(jsonData.length).to.eql(expectedAuthors);",
-							"//});",
-							"",
-							"var minimumAuthors = 400;",
+							"var jsonData = pm.response.json();",							
+							"var minimumAuthors = 200;",
 							"pm.test(\"Found authors with IDs 1 - \" + minimumAuthors, function () {",
 							"    for (i = 0; i < minimumAuthors; i++) {",
 							"        pm.expect(jsonData[i].ID).to.eql(i+1);",
@@ -97,7 +86,6 @@
 					"script": {
 						"exec": [
 							"var jsonData = pm.response.json();",
-							"",
 							"var expectedBooks = 200;",
 							"",
 							"pm.test(\"Found books with IDs 1 - \" + expectedBooks, function () {",
@@ -105,7 +93,6 @@
 							"        pm.expect(jsonData[i].ID).to.eql(i+1);",
 							"    }",
 							"});",
-							"",
 							"pm.test(\"Total books found: \" + expectedBooks, function () {",
 							"    pm.expect(jsonData.length).to.eql(expectedBooks);",
 							"});"
@@ -137,15 +124,12 @@
 					"script": {
 						"exec": [
 							"var jsonData = pm.response.json();",
-							"",
 							"var expectedCoverPhotos = 200;",
-							"",
 							"pm.test(\"Found cover photos with IDs 1 - \" + expectedCoverPhotos, function () {",
 							"    for (i = 0; i < expectedCoverPhotos; i++) {",
 							"        pm.expect(jsonData[i].ID).to.eql(i+1);",
 							"    }",
 							"});",
-							"",
 							"pm.test(\"Total cover photos found: \" + expectedCoverPhotos, function () {",
 							"    pm.expect(jsonData.length).to.eql(expectedCoverPhotos);",
 							"});"
@@ -170,22 +154,19 @@
 			"response": []
 		},
 		{
-			"name": "Get All Users",
+			"name": "Get users",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
 							"var jsonData = pm.response.json();",
-							"",
 							"var expectedUsers = 10;",
-							"",
 							"pm.test(\"Found users with IDs 1 - \" + expectedUsers, function () {",
 							"    for (i = 0; i < expectedUsers; i++) {",
 							"        pm.expect(jsonData[i].ID).to.eql(i+1);",
 							"    }",
 							"});",
-							"",
 							"pm.test(\"Total users found: \" + expectedUsers, function () {",
 							"    pm.expect(jsonData.length).to.eql(expectedUsers);",
 							"});"
@@ -210,13 +191,13 @@
 			"response": []
 		},
 		{
-			"name": "Create Activity",
+			"name": "Create activity",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Create activity response body as expected\", function () {",
+							"pm.test(\"Create activity response is as expected\", function () {",
 							"    pm.response.to.have.body(\"null\");",
 							"});"
 						],
@@ -228,7 +209,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Activities?activity=activity_udacity",
+					"raw": "{{url}}/Activities?activity=activity_c3",
 					"host": [
 						"{{url}}"
 					],
@@ -238,7 +219,7 @@
 					"query": [
 						{
 							"key": "activity",
-							"value": "activity_udacity"
+							"value": "activity_c3"
 						}
 					]
 				}
@@ -252,7 +233,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Create author response body as expected\", function () {",
+							"pm.test(\"Create author response is as expected\", function () {",
 							"    pm.response.to.have.body(\"null\");",
 							"});"
 						],
@@ -264,7 +245,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Authors?author=author_udacity",
+					"raw": "{{url}}/Authors?author=author_c3",
 					"host": [
 						"{{url}}"
 					],
@@ -274,7 +255,7 @@
 					"query": [
 						{
 							"key": "author",
-							"value": "author_udacity"
+							"value": "author_c3"
 						}
 					]
 				}
@@ -288,7 +269,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Create book response body as expected\", function () {",
+							"pm.test(\"Create book response is as expected\", function () {",
 							"    pm.response.to.have.body(\"null\");",
 							"});"
 						],
@@ -300,7 +281,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Books?book=book_udacity",
+					"raw": "{{url}}/Books?book=book_c3",
 					"host": [
 						"{{url}}"
 					],
@@ -310,7 +291,7 @@
 					"query": [
 						{
 							"key": "book",
-							"value": "book_udacity"
+							"value": "book_c3"
 						}
 					]
 				}
@@ -324,7 +305,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Create cover photo response body as expected\", function () {",
+							"pm.test(\"Create cover photo response is as expected\", function () {",
 							"    pm.response.to.have.body(\"null\");",
 							"});"
 						],
@@ -336,7 +317,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/CoverPhotos?coverPhoto=cover_udacity.jpeg",
+					"raw": "{{url}}/CoverPhotos?coverPhoto=cover_c3.jpeg",
 					"host": [
 						"{{url}}"
 					],
@@ -346,7 +327,7 @@
 					"query": [
 						{
 							"key": "coverPhoto",
-							"value": "cover_udacity.jpeg"
+							"value": "cover_c3.jpeg"
 						}
 					]
 				}
@@ -360,7 +341,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Create user response body as expected\", function () {",
+							"pm.test(\"Create user response is as expected\", function () {",
 							"    pm.response.to.have.body(\"null\");",
 							"});"
 						],
@@ -372,7 +353,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Users?user=user_udacity",
+					"raw": "{{url}}/Users?user=user_c3",
 					"host": [
 						"{{url}}"
 					],
@@ -382,7 +363,7 @@
 					"query": [
 						{
 							"key": "user",
-							"value": "user_udacity"
+							"value": "user_c3"
 						}
 					]
 				}
@@ -434,8 +415,7 @@
 					"script": {
 						"exec": [
 							"var jsonData = pm.response.json();",
-							"",
-							"pm.test(\"Author with ID 1 as expected\", function () {",
+							"pm.test(\"Author with id 1 as expected\", function () {",
 							"    pm.expect(jsonData.ID).to.eql(1);",
 							"    pm.expect(jsonData.IDBook).to.eql(1);",
 							"    pm.expect(jsonData.FirstName).to.eql(\"First Name 1\");",
@@ -464,7 +444,7 @@
 			"response": []
 		},
 		{
-			"name": "Get Book",
+			"name": "Get book",
 			"event": [
 				{
 					"listen": "test",
@@ -507,8 +487,7 @@
 					"script": {
 						"exec": [
 							"var jsonData = pm.response.json();",
-							"",
-							"pm.test(\"Cover Photo with ID 1 as expected\", function () {",
+							"pm.test(\"Cover Photo with id 1 as expected\", function () {",
 							"    pm.expect(jsonData.ID).to.eql(1);",
 							"    pm.expect(jsonData.IDBook).to.eql(1);",
 							"    pm.expect(jsonData.Url).to.eql(\"https://placeholdit.imgix.net/~text?txtsize=33&txt=Book 1&w=250&h=350\");",
@@ -542,8 +521,7 @@
 					"script": {
 						"exec": [
 							"var jsonData = pm.response.json();",
-							"",
-							"pm.test(\"User with ID 1 as expected\", function () {",
+							"pm.test(\"User with id 1 as expected\", function () {",
 							"    pm.expect(jsonData.ID).to.eql(1);",
 							"    pm.expect(jsonData.UserName).to.eql(\"User 1\");",
 							"    pm.expect(jsonData.Password).to.eql(\"Password1\");",
@@ -577,7 +555,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Update activity response body as expected\", function () {",
+							"pm.test(\"Update activity response is as expected\", function () {",
 							"    pm.response.to.have.body(\"null\");",
 							"});"
 						],
@@ -589,7 +567,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Activities/1?activity=activity_udacity_2",
+					"raw": "{{url}}/Activities/1?activity=activity_c3_2",
 					"host": [
 						"{{url}}"
 					],
@@ -600,7 +578,7 @@
 					"query": [
 						{
 							"key": "activity",
-							"value": "activity_udacity_2"
+							"value": "activity_c3_2"
 						}
 					]
 				}
@@ -614,7 +592,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Update author response body as expected\", function () {",
+							"pm.test(\"Update author response is as expected\", function () {",
 							"    pm.response.to.have.body(\"null\");",
 							"});"
 						],
@@ -626,7 +604,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Authors?author=author_udacity_2&id=1",
+					"raw": "{{url}}/Authors?author=author_c3_2&id=1",
 					"host": [
 						"{{url}}"
 					],
@@ -636,7 +614,7 @@
 					"query": [
 						{
 							"key": "author",
-							"value": "author_udacity_2"
+							"value": "author_c3_2"
 						},
 						{
 							"key": "id",
@@ -654,7 +632,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Update book response body as expected\", function () {",
+							"pm.test(\"Update book response is as expected\", function () {",
 							"    pm.response.to.have.body(\"null\");",
 							"});"
 						],
@@ -666,7 +644,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Books?book=book_udacity_2&id=1",
+					"raw": "{{url}}/Books?book=book_c3_2&id=1",
 					"host": [
 						"{{url}}"
 					],
@@ -676,7 +654,7 @@
 					"query": [
 						{
 							"key": "book",
-							"value": "book_udacity_2"
+							"value": "book_c3_2"
 						},
 						{
 							"key": "id",
@@ -694,7 +672,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Update cover photo response body as expected\", function () {",
+							"pm.test(\"Update cover photo response is as expected\", function () {",
 							"    pm.response.to.have.body(\"null\");",
 							"});"
 						],
@@ -706,7 +684,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/CoverPhotos?coverPhoto=cover_udacity_2.png&id=1",
+					"raw": "{{url}}/CoverPhotos?coverPhoto=cover_c3_2.png&id=1",
 					"host": [
 						"{{url}}"
 					],
@@ -716,7 +694,7 @@
 					"query": [
 						{
 							"key": "coverPhoto",
-							"value": "cover_udacity_2.png"
+							"value": "cover_c3_2.png"
 						},
 						{
 							"key": "id",
@@ -734,7 +712,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Update user response body as expected\", function () {",
+							"pm.test(\"Update user response is as expected\", function () {",
 							"    pm.response.to.have.body(\"null\");",
 							"});"
 						],
@@ -746,7 +724,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Users?user=user_udacity_2&id=1",
+					"raw": "{{url}}/Users?user=user_c3_2&id=1",
 					"host": [
 						"{{url}}"
 					],
@@ -756,7 +734,7 @@
 					"query": [
 						{
 							"key": "user",
-							"value": "user_udacity_2"
+							"value": "user_c3_2"
 						},
 						{
 							"key": "id",
@@ -774,7 +752,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Delete activity response as expected\", function () {",
+							"pm.test(\"Delete activity response is as expected\", function () {",
 							"    pm.expect(pm.response.text()).to.eql(\"\");",
 							"});"
 						],
@@ -805,7 +783,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Delete author response as expected\", function () {",
+							"pm.test(\"Delete author response is as expected\", function () {",
 							"    pm.expect(pm.response.text()).to.eql(\"\");",
 							"});"
 						],
@@ -836,7 +814,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Delete book response as expected\", function () {",
+							"pm.test(\"Delete book response is as expected\", function () {",
 							"    pm.expect(pm.response.text()).to.eql(\"\");",
 							"});"
 						],
@@ -867,7 +845,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Delete cover photo response as expected\", function () {",
+							"pm.test(\"Delete cover photo response is as expected\", function () {",
 							"    pm.expect(pm.response.text()).to.eql(\"\");",
 							"});"
 						],
@@ -898,7 +876,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Delete user response as expected\", function () {",
+							"pm.test(\"Delete user response is as expected\", function () {",
 							"    pm.expect(pm.response.text()).to.eql(\"\");",
 							"});"
 						],

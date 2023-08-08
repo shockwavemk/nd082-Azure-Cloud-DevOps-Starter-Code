@@ -12,7 +12,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Get All Activities endpoint response code is 200\", function () {",
+							"pm.test(\"GET: Activities endpoint responds with code 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
@@ -36,13 +36,13 @@
 			"response": []
 		},
 		{
-			"name": "Get All Authors",
+			"name": "Get authors",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Get All Authors endpoint response code is 200\", function () {",
+							"pm.test(\"GET: Authors endpoint responds with code 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
@@ -66,13 +66,13 @@
 			"response": []
 		},
 		{
-			"name": "Get All Books",
+			"name": "Get books",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Get All Books endpoint response code is 200\", function () {",
+							"pm.test(\"GET: Books endpoint responds with code 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
@@ -96,13 +96,13 @@
 			"response": []
 		},
 		{
-			"name": "Get All CoverPhotos",
+			"name": "Get CoverPhotos",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Get All CoverPhotos endpoint response code is 200\", function () {",
+							"pm.test(\"GET: CoverPhotos endpoint response code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
@@ -126,13 +126,13 @@
 			"response": []
 		},
 		{
-			"name": "Get All Users",
+			"name": "Get Users",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Get All Users endpoint response code is 200\", function () {",
+							"pm.test(\"GET: Users endpoint responds with code 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
@@ -156,13 +156,13 @@
 			"response": []
 		},
 		{
-			"name": "Create Activity",
+			"name": "Create activity",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Create Activity endpoint response code is 200\", function () {",
+							"pm.test(\"POST: Create activity endpoint responds with code 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
@@ -174,7 +174,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Activities?activity=activity_udacity",
+					"raw": "{{url}}/Activities?activity=activity_c3",
 					"host": [
 						"{{url}}"
 					],
@@ -184,7 +184,7 @@
 					"query": [
 						{
 							"key": "activity",
-							"value": "activity_udacity"
+							"value": "activity_c3"
 						}
 					]
 				}
@@ -192,7 +192,7 @@
 			"response": []
 		},
 		{
-			"name": "Create Author",
+			"name": "Create author",
 			"event": [
 				{
 					"listen": "test",
@@ -210,7 +210,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Authors?author=author_udacity",
+					"raw": "{{url}}/Authors?author=author_c3",
 					"host": [
 						"{{url}}"
 					],
@@ -220,7 +220,7 @@
 					"query": [
 						{
 							"key": "author",
-							"value": "author_udacity"
+							"value": "author_c3"
 						}
 					]
 				}
@@ -246,7 +246,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Books?book=book_udacity",
+					"raw": "{{url}}/Books?book=book_c3",
 					"host": [
 						"{{url}}"
 					],
@@ -256,7 +256,7 @@
 					"query": [
 						{
 							"key": "book",
-							"value": "book_udacity"
+							"value": "book_c3"
 						}
 					]
 				}
@@ -282,7 +282,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/CoverPhotos?coverPhoto=cover_udacity.jpeg",
+					"raw": "{{url}}/CoverPhotos?coverPhoto=cover_c3.jpeg",
 					"host": [
 						"{{url}}"
 					],
@@ -292,7 +292,7 @@
 					"query": [
 						{
 							"key": "coverPhoto",
-							"value": "cover_udacity.jpeg"
+							"value": "cover_c3.jpeg"
 						}
 					]
 				}
@@ -318,7 +318,7 @@
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Users?user=user_udacity",
+					"raw": "{{url}}/Users?user=user_c3",
 					"host": [
 						"{{url}}"
 					],
@@ -328,7 +328,7 @@
 					"query": [
 						{
 							"key": "user",
-							"value": "user_udacity"
+							"value": "user_c3"
 						}
 					]
 				}
@@ -466,7 +466,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Get User endpoint response code is 200\", function () {",
+							"pm.test(\"User endpoint response code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});"
 						],
@@ -509,7 +509,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Activities/1?activity=updated_udacity_2",
+					"raw": "{{url}}/Activities/1?activity=updated_c3_2",
 					"host": [
 						"{{url}}"
 					],
@@ -520,7 +520,7 @@
 					"query": [
 						{
 							"key": "activity",
-							"value": "updated_udacity_2"
+							"value": "updated_c3_2"
 						}
 					]
 				}
@@ -546,7 +546,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Authors?author=author_udacity_2&id=1",
+					"raw": "{{url}}/Authors?author=author_c3_2&id=1",
 					"host": [
 						"{{url}}"
 					],
@@ -556,7 +556,7 @@
 					"query": [
 						{
 							"key": "author",
-							"value": "author_udacity_2"
+							"value": "author_c3_2"
 						},
 						{
 							"key": "id",
@@ -586,7 +586,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Books?book=book_udacity_2&id=1",
+					"raw": "{{url}}/Books?book=book_c3_2&id=1",
 					"host": [
 						"{{url}}"
 					],
@@ -596,7 +596,7 @@
 					"query": [
 						{
 							"key": "book",
-							"value": "book_udacity_2"
+							"value": "book_c3_2"
 						},
 						{
 							"key": "id",
@@ -626,7 +626,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/CoverPhotos?coverPhoto=cover_udacity_2.png&id=1",
+					"raw": "{{url}}/CoverPhotos?coverPhoto=cover_c3_2.png&id=1",
 					"host": [
 						"{{url}}"
 					],
@@ -636,7 +636,7 @@
 					"query": [
 						{
 							"key": "coverPhoto",
-							"value": "cover_udacity_2.png"
+							"value": "cover_c3_2.png"
 						},
 						{
 							"key": "id",
@@ -666,7 +666,7 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{url}}/Users?user=User_udacity_2&id=1",
+					"raw": "{{url}}/Users?user=User_c3_2&id=1",
 					"host": [
 						"{{url}}"
 					],
@@ -676,7 +676,7 @@
 					"query": [
 						{
 							"key": "user",
-							"value": "User_udacity_2"
+							"value": "User_c3_2"
 						},
 						{
 							"key": "id",
