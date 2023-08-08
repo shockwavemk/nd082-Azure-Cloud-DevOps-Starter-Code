@@ -16,7 +16,7 @@ def functional_ui_test(user, password):
     options.add_argument("--remote-debugging-port=9222")
     driver = webdriver.Chrome(options=options)
     
-    # Test Login to the site
+    # Login
     logging.info('Browser started. Access to the demo page to login.')
     driver.get('https://www.saucedemo.com/')
     driver.find_element(By.CSS_SELECTOR,"input[id='user-name']").send_keys(user)
@@ -25,14 +25,14 @@ def functional_ui_test(user, password):
     path_content_div = "div[id='page_wrapper'] > div[id='contents_wrapper']"
     results = driver.find_element(By.CSS_SELECTOR,path_content_div + " > div[class='header_container'] > div[class='header_secondary_container'] > span").text
     assert "Products" in results
-    logging.info("Successfully logged in as " + user)
+    logging.info("Logged in as " + user)
 
-    # Test Add Items to Shopping Cart
+    # Add items
     logging.info("Starting the shopping...")
     path_inventory_item = "//*[@id='inventory_container']/*[@class='inventory_list']/div[@class='inventory_item']"
     product_items = driver.find_elements(By.XPATH,path_inventory_item)
     assert len(product_items) == 6
-    logging.info("Successfully found 6 product items.")    
+    logging.info("Found 6 product items.")    
     
     for item in product_items:
         product_item_name = item.text.split('\n',1)[0]
@@ -45,7 +45,7 @@ def functional_ui_test(user, password):
     assert '6' == shopping_cart_total_items
     logging.info("Succesfully added to shopping cart: 6 items in total")
 
-    # Test Remove Items from Shopping Cart
+    # Remove items
     logging.info("A spouse came in, need to destroy the the evidence... ;-)")
     driver.find_element(By.XPATH,path_shopping_cart_link).click()
     path_cart_title = "//*[@id='header_container']/div[@class='header_secondary_container']/span"

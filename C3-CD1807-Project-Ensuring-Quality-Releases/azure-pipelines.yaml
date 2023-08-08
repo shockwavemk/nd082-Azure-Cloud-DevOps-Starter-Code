@@ -100,7 +100,7 @@ stages:
     - task: ArchiveFiles@2
       displayName: 'Archive UI Tests'
       inputs:
-        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases//automatedtesting/selenium'
+        rootFolderOrFile: '$(System.DefaultWorkingDirectory)/C3-CD1807-Project-Ensuring-Quality-Releases/automatedtesting/selenium'
         includeRootFolder: false
         archiveType: 'zip'
         archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-uitests.zip'
@@ -158,12 +158,23 @@ stages:
               appType: webApp
               package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
 
-          #--------------------------------------------#    
+          #--------------------------------------------#
+          - download: current
+            artifact: drop-perftests
+
           # Jmeter - Install Jmeter
           - task: JMeterInstaller@0
             displayName: 'Install JMeter 5.6.2'
             inputs:
               jmeterVersion: '5.6.2'
+
+          # Jmeter - get perftests     
+          - task: Bash@3
+            displayName: 'Get tests'
+            inputs:
+              targetType: 'inline'
+              script: |
+                unzip -o $(Pipeline.Workspace)/drop-perftests/$(Build.BuildId)-perftests.zip $(Pipeline.Workspace)/perftests
 
           # Jmeter - Endurance Test Suite     
           - task: Bash@3
@@ -172,7 +183,7 @@ stages:
               targetType: 'inline'
               script: |
                 jmeter -n \
-                  -t automatedtesting/jmeter/test-suite/EnduranceTest.jmx \
+                  -t $(Pipeline.Workspace)/perftests/EnduranceTest.jmx \
                   -l endurance-test-report/endurance-results.jtl \
                   -e \
                   -o endurance-test-report
@@ -182,7 +193,7 @@ stages:
             displayName: 'Publish Endurance Test Results'
             inputs:
               htmlType: 'Jmeter'
-              JmeterReportsPath: '$(Build.SourcesDirectory)/endurance-test-report'
+              JmeterReportsPath: '$(Pipeline.Workspace)/perftests/endurance-test-report'
 
           # Jmeter - Stress Test Suite    
           - task: Bash@3
@@ -191,7 +202,7 @@ stages:
               targetType: 'inline'
               script: |
                 jmeter -n \
-                  -t automatedtesting/jmeter/test-suite/StressTest.jmx \
+                  -t $(Pipeline.Workspace)/perftests/StressTest.jmx \
                   -l stress-test-report/stress-results.jtl \
                   -e \
                   -o stress-test-report
@@ -201,7 +212,7 @@ stages:
             displayName: 'Publish Stress Test Results'
             inputs:
               htmlType: 'Jmeter'
-              JmeterReportsPath: '$(Build.SourcesDirectory)/stress-test-report'   
+              JmeterReportsPath: '$(Pipeline.Workspace)/perftests/stress-test-report'   
 
           # Print Performance Test Logs
           - task: Bash@3
@@ -239,21 +250,20 @@ stages:
                 sudo apt-get install -y chromium-browser
                 pip3 install selenium
                 cd ~/
-                DIR=/home/testuser/app
+                DIR=/home/azureuser/app
                 if [ ! -d "$DIR" ]; then
                     mkdir app
                 fi
                 mv $(Pipeline.Workspace)/drop-ui-tests/$(Build.BuildId)-uitests.zip app
                 cd app
                 unzip -o $(Build.BuildId)-uitests.zip
-                FILE=/home/testuser/app/chromedriver_linux64.zip
+                FILE=/home/azureuser/app/chromedriver-linux64.zip
                 if [ ! -f "$FILE" ]; then
-                    LATEST=$(wget -q -O - http://chromedriver.storage.googleapis.com/LATEST_RELEASE)
-                    wget http://chromedriver.storage.googleapis.com/$LATEST/chromedriver_linux64.zip
-                    unzip -o chromedriver_linux64.zip
+                    wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.170/linux64/chromedriver-linux64.zip
+                    unzip -o chromedriver-linux64.zip
                     sudo ln -s $PWD/chromedriver /usr/local/bin/chromedriver
                 fi
-                export PATH=$PATH:/home/testuser/app
+                export PATH=$PATH:/home/azureuser/app
                 echo "Starting Selenium Tests"
                 python3 add_remove_from_cart.py >> selenium.log
                 cat selenium.log

@@ -1,0 +1,284 @@
+2023-08-08 00:46:34,907 INFO Starting the browser...
+2023-08-08 00:46:34,907 DEBUG Selenium Manager binary found at: /home/kram030/.local/lib/python3.10/site-packages/selenium/webdriver/common/linux/selenium-manager
+2023-08-08 00:46:34,907 DEBUG Executing process: /home/kram030/.local/lib/python3.10/site-packages/selenium/webdriver/common/linux/selenium-manager --browser chrome --debug --output json
+2023-08-08 00:46:34,939 DEBUG Checking chromedriver in PATH
+2023-08-08 00:46:34,939 DEBUG Running command: chromedriver --version
+2023-08-08 00:46:34,939 DEBUG Output: "ChromeDriver 115.0.5790.170 (cc0d30c2ca5577520c8646671513241faa0bc105-refs/branch-heads/5790@{#1923})"
+2023-08-08 00:46:34,939 DEBUG Running command: which chromedriver
+2023-08-08 00:46:34,939 DEBUG Output: "/usr/local/bin/chromedriver"
+2023-08-08 00:46:34,939 DEBUG Found chromedriver 115.0.5790.170 in PATH: /usr/local/bin/chromedriver
+2023-08-08 00:46:34,939 DEBUG chrome detected at /opt/google/chrome/google-chrome
+2023-08-08 00:46:34,939 DEBUG Using shell command to find out chrome version
+2023-08-08 00:46:34,939 DEBUG Running command: /opt/google/chrome/google-chrome --version
+2023-08-08 00:46:34,939 DEBUG Output: "Google Chrome 115.0.5790.170 "
+2023-08-08 00:46:34,940 DEBUG Detected browser: chrome 115.0.5790.170
+2023-08-08 00:46:34,940 DEBUG Required driver: chromedriver 115.0.5790.170
+2023-08-08 00:46:34,940 DEBUG Driver path: /usr/local/bin/chromedriver
+2023-08-08 00:46:34,940 DEBUG Browser path: /opt/google/chrome/google-chrome
+2023-08-08 00:46:34,940 DEBUG Using driver at: /usr/local/bin/chromedriver
+2023-08-08 00:46:34,941 DEBUG Started executable: `/usr/local/bin/chromedriver` in a child process with pid: 22092
+2023-08-08 00:46:35,444 DEBUG POST http://localhost:53019/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "pageLoadStrategy": "normal", "browserVersion": null, "goog:chromeOptions": {"extensions": [], "binary": "/opt/google/chrome/google-chrome", "args": ["--no-sandbox", "--headless", "--remote-debugging-port=9222"]}}}}
+2023-08-08 00:46:35,445 DEBUG Starting new HTTP connection (1): localhost:53019
+2023-08-08 00:46:35,576 DEBUG http://localhost:53019 "POST /session HTTP/1.1" 200 827
+2023-08-08 00:46:35,576 DEBUG Remote response: status=200 | data={"value":{"capabilities":{"acceptInsecureCerts":false,"browserName":"chrome","browserVersion":"115.0.5790.170","chrome":{"chromedriverVersion":"115.0.5790.170 (cc0d30c2ca5577520c8646671513241faa0bc105-refs/branch-heads/5790@{#1923})","userDataDir":"/tmp/.org.chromium.Chromium.BWl6Sz"},"goog:chromeOptions":{"debuggerAddress":"localhost:9222"},"networkConnectionEnabled":false,"pageLoadStrategy":"normal","platformName":"linux","proxy":{},"setWindowRect":true,"strictFileInteractability":false,"timeouts":{"implicit":0,"pageLoad":300000,"script":30000},"unhandledPromptBehavior":"dismiss and notify","webauthn:extension:credBlob":true,"webauthn:extension:largeBlob":true,"webauthn:extension:minPinLength":true,"webauthn:extension:prf":true,"webauthn:virtualAuthenticators":true},"sessionId":"b9853ea6fee01aed0f434cd8d371d23d"}} | headers=HTTPHeaderDict({'Content-Length': '827', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:35,576 DEBUG Finished Request
+2023-08-08 00:46:35,576 INFO Browser started. Access to the demo page to login.
+2023-08-08 00:46:35,576 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/url {"url": "https://www.saucedemo.com/"}
+2023-08-08 00:46:35,879 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/url HTTP/1.1" 200 14
+2023-08-08 00:46:35,879 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:35,879 DEBUG Finished Request
+2023-08-08 00:46:35,879 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element {"using": "css selector", "value": "input[id='user-name']"}
+2023-08-08 00:46:35,892 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element HTTP/1.1" 200 94
+2023-08-08 00:46:35,892 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_6"}} | headers=HTTPHeaderDict({'Content-Length': '94', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:35,892 DEBUG Finished Request
+2023-08-08 00:46:35,892 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_6/value {"text": "standard_user", "value": ["s", "t", "a", "n", "d", "a", "r", "d", "_", "u", "s", "e", "r"], "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_6"}
+2023-08-08 00:46:35,980 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_6/value HTTP/1.1" 200 14
+2023-08-08 00:46:35,981 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:35,981 DEBUG Finished Request
+2023-08-08 00:46:35,981 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element {"using": "css selector", "value": "input[id='password']"}
+2023-08-08 00:46:35,994 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element HTTP/1.1" 200 94
+2023-08-08 00:46:35,995 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_8"}} | headers=HTTPHeaderDict({'Content-Length': '94', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:35,995 DEBUG Finished Request
+2023-08-08 00:46:35,995 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_8/value {"text": "secret_sauce", "value": ["s", "e", "c", "r", "e", "t", "_", "s", "a", "u", "c", "e"], "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_8"}
+2023-08-08 00:46:36,078 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_8/value HTTP/1.1" 200 14
+2023-08-08 00:46:36,079 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,079 DEBUG Finished Request
+2023-08-08 00:46:36,079 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element {"using": "css selector", "value": "input[id='login-button']"}
+2023-08-08 00:46:36,093 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element HTTP/1.1" 200 94
+2023-08-08 00:46:36,094 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_2"}} | headers=HTTPHeaderDict({'Content-Length': '94', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,094 DEBUG Finished Request
+2023-08-08 00:46:36,094 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_2/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_2"}
+2023-08-08 00:46:36,177 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_2/click HTTP/1.1" 200 14
+2023-08-08 00:46:36,177 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,177 DEBUG Finished Request
+2023-08-08 00:46:36,177 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element {"using": "css selector", "value": "div[id='page_wrapper'] > div[id='contents_wrapper'] > div[class='header_container'] > div[class='header_secondary_container'] > span"}
+2023-08-08 00:46:36,188 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,188 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_13"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,188 DEBUG Finished Request
+2023-08-08 00:46:36,188 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_13/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_13"}
+2023-08-08 00:46:36,201 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_13/text HTTP/1.1" 200 20
+2023-08-08 00:46:36,202 DEBUG Remote response: status=200 | data={"value":"Products"} | headers=HTTPHeaderDict({'Content-Length': '20', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,202 DEBUG Finished Request
+2023-08-08 00:46:36,202 INFO Successfully logged in as standard_user
+2023-08-08 00:46:36,202 INFO Starting the shopping...
+2023-08-08 00:46:36,202 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/elements {"using": "xpath", "value": "//*[@id='inventory_container']/*[@class='inventory_list']/div[@class='inventory_item']"}
+2023-08-08 00:46:36,212 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/elements HTTP/1.1" 200 527
+2023-08-08 00:46:36,213 DEBUG Remote response: status=200 | data={"value":[{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_14"},{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_15"},{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_16"},{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_17"},{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_18"},{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_19"}]} | headers=HTTPHeaderDict({'Content-Length': '527', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,213 DEBUG Finished Request
+2023-08-08 00:46:36,213 INFO Successfully found 6 product items.
+2023-08-08 00:46:36,213 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_14/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_14"}
+2023-08-08 00:46:36,224 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_14/text HTTP/1.1" 200 188
+2023-08-08 00:46:36,225 DEBUG Remote response: status=200 | data={"value":"Sauce Labs Backpack\ncarry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.\n$29.99\nAdd to cart"} | headers=HTTPHeaderDict({'Content-Length': '188', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,225 DEBUG Finished Request
+2023-08-08 00:46:36,225 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_14/element {"using": "xpath", "value": "//button[contains(text(),'Add to cart')]", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_14"}
+2023-08-08 00:46:36,237 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_14/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,237 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_20"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,237 DEBUG Finished Request
+2023-08-08 00:46:36,237 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_20/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_20"}
+2023-08-08 00:46:36,275 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_20/click HTTP/1.1" 200 14
+2023-08-08 00:46:36,275 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,275 DEBUG Finished Request
+2023-08-08 00:46:36,275 INFO Succesfully added to shopping cart: Sauce Labs Backpack
+2023-08-08 00:46:36,276 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_15/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_15"}
+2023-08-08 00:46:36,288 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_15/text HTTP/1.1" 200 214
+2023-08-08 00:46:36,288 DEBUG Remote response: status=200 | data={"value":"Sauce Labs Bike Light\nA red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.\n$9.99\nAdd to cart"} | headers=HTTPHeaderDict({'Content-Length': '214', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,289 DEBUG Finished Request
+2023-08-08 00:46:36,289 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_15/element {"using": "xpath", "value": "//button[contains(text(),'Add to cart')]", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_15"}
+2023-08-08 00:46:36,298 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_15/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,299 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_21"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,299 DEBUG Finished Request
+2023-08-08 00:46:36,299 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_21/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_21"}
+2023-08-08 00:46:36,333 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_21/click HTTP/1.1" 200 14
+2023-08-08 00:46:36,333 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,333 DEBUG Finished Request
+2023-08-08 00:46:36,333 INFO Succesfully added to shopping cart: Sauce Labs Bike Light
+2023-08-08 00:46:36,333 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_16/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_16"}
+2023-08-08 00:46:36,345 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_16/text HTTP/1.1" 200 201
+2023-08-08 00:46:36,345 DEBUG Remote response: status=200 | data={"value":"Sauce Labs Bolt T-Shirt\nGet your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.\n$15.99\nAdd to cart"} | headers=HTTPHeaderDict({'Content-Length': '201', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,345 DEBUG Finished Request
+2023-08-08 00:46:36,345 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_16/element {"using": "xpath", "value": "//button[contains(text(),'Add to cart')]", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_16"}
+2023-08-08 00:46:36,354 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_16/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,354 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_22"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,354 DEBUG Finished Request
+2023-08-08 00:46:36,354 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_22/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_22"}
+2023-08-08 00:46:36,410 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_22/click HTTP/1.1" 200 14
+2023-08-08 00:46:36,411 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,411 DEBUG Finished Request
+2023-08-08 00:46:36,411 INFO Succesfully added to shopping cart: Sauce Labs Bolt T-Shirt
+2023-08-08 00:46:36,411 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_17/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_17"}
+2023-08-08 00:46:36,433 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_17/text HTTP/1.1" 200 225
+2023-08-08 00:46:36,434 DEBUG Remote response: status=200 | data={"value":"Sauce Labs Fleece Jacket\nIt's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.\n$49.99\nAdd to cart"} | headers=HTTPHeaderDict({'Content-Length': '225', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,434 DEBUG Finished Request
+2023-08-08 00:46:36,434 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_17/element {"using": "xpath", "value": "//button[contains(text(),'Add to cart')]", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_17"}
+2023-08-08 00:46:36,446 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_17/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,447 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_23"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,447 DEBUG Finished Request
+2023-08-08 00:46:36,447 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_23/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_23"}
+2023-08-08 00:46:36,488 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_23/click HTTP/1.1" 200 14
+2023-08-08 00:46:36,489 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,489 DEBUG Finished Request
+2023-08-08 00:46:36,489 INFO Succesfully added to shopping cart: Sauce Labs Fleece Jacket
+2023-08-08 00:46:36,489 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_18/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_18"}
+2023-08-08 00:46:36,502 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_18/text HTTP/1.1" 200 210
+2023-08-08 00:46:36,503 DEBUG Remote response: status=200 | data={"value":"Sauce Labs Onesie\nRib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.\n$7.99\nAdd to cart"} | headers=HTTPHeaderDict({'Content-Length': '210', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,503 DEBUG Finished Request
+2023-08-08 00:46:36,503 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_18/element {"using": "xpath", "value": "//button[contains(text(),'Add to cart')]", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_18"}
+2023-08-08 00:46:36,516 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_18/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,516 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_24"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,517 DEBUG Finished Request
+2023-08-08 00:46:36,517 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_24/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_24"}
+2023-08-08 00:46:36,549 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_24/click HTTP/1.1" 200 14
+2023-08-08 00:46:36,550 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,550 DEBUG Finished Request
+2023-08-08 00:46:36,550 INFO Succesfully added to shopping cart: Sauce Labs Onesie
+2023-08-08 00:46:36,550 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_19/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_19"}
+2023-08-08 00:46:36,562 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_19/text HTTP/1.1" 200 221
+2023-08-08 00:46:36,562 DEBUG Remote response: status=200 | data={"value":"Test.allTheThings() T-Shirt (Red)\nThis classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.\n$15.99\nAdd to cart"} | headers=HTTPHeaderDict({'Content-Length': '221', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,562 DEBUG Finished Request
+2023-08-08 00:46:36,562 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_19/element {"using": "xpath", "value": "//button[contains(text(),'Add to cart')]", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_19"}
+2023-08-08 00:46:36,571 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_19/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,571 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_25"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,571 DEBUG Finished Request
+2023-08-08 00:46:36,571 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_25/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_25"}
+2023-08-08 00:46:36,598 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_25/click HTTP/1.1" 200 14
+2023-08-08 00:46:36,598 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,599 DEBUG Finished Request
+2023-08-08 00:46:36,599 INFO Succesfully added to shopping cart: Test.allTheThings() T-Shirt (Red)
+2023-08-08 00:46:36,599 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element {"using": "xpath", "value": "//*[@id='shopping_cart_container']//span[@class='shopping_cart_badge']"}
+2023-08-08 00:46:36,609 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,609 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_26"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,610 DEBUG Finished Request
+2023-08-08 00:46:36,610 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_26/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_26"}
+2023-08-08 00:46:36,617 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_26/text HTTP/1.1" 200 13
+2023-08-08 00:46:36,617 DEBUG Remote response: status=200 | data={"value":"6"} | headers=HTTPHeaderDict({'Content-Length': '13', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,617 DEBUG Finished Request
+2023-08-08 00:46:36,617 INFO Succesfully added to shopping cart: 6 items in total
+2023-08-08 00:46:36,617 INFO A spouse came in, need to destroy the the evidence... ;-)
+2023-08-08 00:46:36,618 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element {"using": "xpath", "value": "//*[@id='shopping_cart_container']"}
+2023-08-08 00:46:36,629 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,630 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_27"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,630 DEBUG Finished Request
+2023-08-08 00:46:36,630 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_27/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_27"}
+2023-08-08 00:46:36,676 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_27/click HTTP/1.1" 200 14
+2023-08-08 00:46:36,677 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,677 DEBUG Finished Request
+2023-08-08 00:46:36,677 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element {"using": "xpath", "value": "//*[@id='header_container']/div[@class='header_secondary_container']/span"}
+2023-08-08 00:46:36,688 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,688 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_28"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,688 DEBUG Finished Request
+2023-08-08 00:46:36,688 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_28/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_28"}
+2023-08-08 00:46:36,697 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_28/text HTTP/1.1" 200 21
+2023-08-08 00:46:36,697 DEBUG Remote response: status=200 | data={"value":"Your Cart"} | headers=HTTPHeaderDict({'Content-Length': '21', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,698 DEBUG Finished Request
+2023-08-08 00:46:36,698 INFO Successfully entered the shopping cart page.
+2023-08-08 00:46:36,698 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/elements {"using": "xpath", "value": "//*[@id='cart_contents_container']//div[@class='cart_list']//div[@class='cart_item']"}
+2023-08-08 00:46:36,707 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/elements HTTP/1.1" 200 527
+2023-08-08 00:46:36,707 DEBUG Remote response: status=200 | data={"value":[{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_29"},{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_30"},{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_31"},{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_32"},{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_33"},{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_34"}]} | headers=HTTPHeaderDict({'Content-Length': '527', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,707 DEBUG Finished Request
+2023-08-08 00:46:36,707 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_29/element {"using": "xpath", "value": "//*[@class='inventory_item_name']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_29"}
+2023-08-08 00:46:36,718 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_29/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,718 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_35"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,719 DEBUG Finished Request
+2023-08-08 00:46:36,719 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_35/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_35"}
+2023-08-08 00:46:36,726 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_35/text HTTP/1.1" 200 31
+2023-08-08 00:46:36,726 DEBUG Remote response: status=200 | data={"value":"Sauce Labs Backpack"} | headers=HTTPHeaderDict({'Content-Length': '31', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,726 DEBUG Finished Request
+2023-08-08 00:46:36,726 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_29/element {"using": "xpath", "value": "//button[text()='Remove']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_29"}
+2023-08-08 00:46:36,737 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_29/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,738 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_36"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,738 DEBUG Finished Request
+2023-08-08 00:46:36,738 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_36/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_36"}
+2023-08-08 00:46:36,813 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_36/click HTTP/1.1" 200 14
+2023-08-08 00:46:36,814 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,814 DEBUG Finished Request
+2023-08-08 00:46:36,814 INFO Succesfully removed an item from shopping cart: Sauce Labs Backpack
+2023-08-08 00:46:36,814 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_30/element {"using": "xpath", "value": "//*[@class='inventory_item_name']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_30"}
+2023-08-08 00:46:36,828 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_30/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,828 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_38"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,829 DEBUG Finished Request
+2023-08-08 00:46:36,829 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_38/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_38"}
+2023-08-08 00:46:36,843 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_38/text HTTP/1.1" 200 33
+2023-08-08 00:46:36,844 DEBUG Remote response: status=200 | data={"value":"Sauce Labs Bike Light"} | headers=HTTPHeaderDict({'Content-Length': '33', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,844 DEBUG Finished Request
+2023-08-08 00:46:36,844 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_30/element {"using": "xpath", "value": "//button[text()='Remove']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_30"}
+2023-08-08 00:46:36,854 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_30/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,854 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_43"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,854 DEBUG Finished Request
+2023-08-08 00:46:36,854 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_43/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_43"}
+2023-08-08 00:46:36,897 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_43/click HTTP/1.1" 200 14
+2023-08-08 00:46:36,898 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,898 DEBUG Finished Request
+2023-08-08 00:46:36,898 INFO Succesfully removed an item from shopping cart: Sauce Labs Bike Light
+2023-08-08 00:46:36,898 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_31/element {"using": "xpath", "value": "//*[@class='inventory_item_name']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_31"}
+2023-08-08 00:46:36,911 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_31/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,911 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_40"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,911 DEBUG Finished Request
+2023-08-08 00:46:36,912 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_40/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_40"}
+2023-08-08 00:46:36,923 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_40/text HTTP/1.1" 200 35
+2023-08-08 00:46:36,924 DEBUG Remote response: status=200 | data={"value":"Sauce Labs Bolt T-Shirt"} | headers=HTTPHeaderDict({'Content-Length': '35', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,924 DEBUG Finished Request
+2023-08-08 00:46:36,924 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_31/element {"using": "xpath", "value": "//button[text()='Remove']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_31"}
+2023-08-08 00:46:36,934 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_31/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,935 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_46"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,935 DEBUG Finished Request
+2023-08-08 00:46:36,935 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_46/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_46"}
+2023-08-08 00:46:36,977 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_46/click HTTP/1.1" 200 14
+2023-08-08 00:46:36,977 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,977 DEBUG Finished Request
+2023-08-08 00:46:36,977 INFO Succesfully removed an item from shopping cart: Sauce Labs Bolt T-Shirt
+2023-08-08 00:46:36,977 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_32/element {"using": "xpath", "value": "//*[@class='inventory_item_name']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_32"}
+2023-08-08 00:46:36,987 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_32/element HTTP/1.1" 200 95
+2023-08-08 00:46:36,987 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_42"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,988 DEBUG Finished Request
+2023-08-08 00:46:36,988 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_42/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_42"}
+2023-08-08 00:46:36,996 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_42/text HTTP/1.1" 200 36
+2023-08-08 00:46:36,996 DEBUG Remote response: status=200 | data={"value":"Sauce Labs Fleece Jacket"} | headers=HTTPHeaderDict({'Content-Length': '36', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:36,996 DEBUG Finished Request
+2023-08-08 00:46:36,996 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_32/element {"using": "xpath", "value": "//button[text()='Remove']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_32"}
+2023-08-08 00:46:37,003 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_32/element HTTP/1.1" 200 95
+2023-08-08 00:46:37,004 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_49"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:37,004 DEBUG Finished Request
+2023-08-08 00:46:37,004 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_49/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_49"}
+2023-08-08 00:46:37,041 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_49/click HTTP/1.1" 200 14
+2023-08-08 00:46:37,041 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:37,041 DEBUG Finished Request
+2023-08-08 00:46:37,041 INFO Succesfully removed an item from shopping cart: Sauce Labs Fleece Jacket
+2023-08-08 00:46:37,041 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_33/element {"using": "xpath", "value": "//*[@class='inventory_item_name']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_33"}
+2023-08-08 00:46:37,056 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_33/element HTTP/1.1" 200 95
+2023-08-08 00:46:37,057 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_48"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:37,057 DEBUG Finished Request
+2023-08-08 00:46:37,057 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_48/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_48"}
+2023-08-08 00:46:37,072 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_48/text HTTP/1.1" 200 29
+2023-08-08 00:46:37,072 DEBUG Remote response: status=200 | data={"value":"Sauce Labs Onesie"} | headers=HTTPHeaderDict({'Content-Length': '29', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:37,073 DEBUG Finished Request
+2023-08-08 00:46:37,073 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_33/element {"using": "xpath", "value": "//button[text()='Remove']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_33"}
+2023-08-08 00:46:37,087 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_33/element HTTP/1.1" 200 95
+2023-08-08 00:46:37,087 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_53"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:37,087 DEBUG Finished Request
+2023-08-08 00:46:37,087 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_53/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_53"}
+2023-08-08 00:46:37,142 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_53/click HTTP/1.1" 200 14
+2023-08-08 00:46:37,143 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:37,143 DEBUG Finished Request
+2023-08-08 00:46:37,143 INFO Succesfully removed an item from shopping cart: Sauce Labs Onesie
+2023-08-08 00:46:37,143 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_34/element {"using": "xpath", "value": "//*[@class='inventory_item_name']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_34"}
+2023-08-08 00:46:37,160 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_34/element HTTP/1.1" 200 95
+2023-08-08 00:46:37,160 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_51"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:37,160 DEBUG Finished Request
+2023-08-08 00:46:37,160 DEBUG GET http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_51/text {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_51"}
+2023-08-08 00:46:37,174 DEBUG http://localhost:53019 "GET /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_51/text HTTP/1.1" 200 45
+2023-08-08 00:46:37,175 DEBUG Remote response: status=200 | data={"value":"Test.allTheThings() T-Shirt (Red)"} | headers=HTTPHeaderDict({'Content-Length': '45', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:37,175 DEBUG Finished Request
+2023-08-08 00:46:37,175 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_34/element {"using": "xpath", "value": "//button[text()='Remove']", "id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_34"}
+2023-08-08 00:46:37,189 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_34/element HTTP/1.1" 200 95
+2023-08-08 00:46:37,189 DEBUG Remote response: status=200 | data={"value":{"element-6066-11e4-a52e-4f735466cecf":"0AD40AA44F144ECD57D5E3DC19BC2A65_element_57"}} | headers=HTTPHeaderDict({'Content-Length': '95', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:37,189 DEBUG Finished Request
+2023-08-08 00:46:37,189 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_57/click {"id": "0AD40AA44F144ECD57D5E3DC19BC2A65_element_57"}
+2023-08-08 00:46:37,242 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/element/0AD40AA44F144ECD57D5E3DC19BC2A65_element_57/click HTTP/1.1" 200 14
+2023-08-08 00:46:37,242 DEBUG Remote response: status=200 | data={"value":null} | headers=HTTPHeaderDict({'Content-Length': '14', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:37,242 DEBUG Finished Request
+2023-08-08 00:46:37,242 INFO Succesfully removed an item from shopping cart: Test.allTheThings() T-Shirt (Red)
+2023-08-08 00:46:37,243 DEBUG POST http://localhost:53019/session/b9853ea6fee01aed0f434cd8d371d23d/elements {"using": "xpath", "value": "//*[@id='shopping_cart_container']//span[@class='shopping_cart_badge']"}
+2023-08-08 00:46:37,257 DEBUG http://localhost:53019 "POST /session/b9853ea6fee01aed0f434cd8d371d23d/elements HTTP/1.1" 200 12
+2023-08-08 00:46:37,257 DEBUG Remote response: status=200 | data={"value":[]} | headers=HTTPHeaderDict({'Content-Length': '12', 'Content-Type': 'application/json; charset=utf-8', 'cache-control': 'no-cache'})
+2023-08-08 00:46:37,257 DEBUG Finished Request
+2023-08-08 00:46:37,258 INFO Succesfully removed all items from shopping cart.
