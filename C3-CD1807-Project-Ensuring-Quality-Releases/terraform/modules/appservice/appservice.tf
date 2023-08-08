@@ -2,8 +2,11 @@ resource "azurerm_service_plan" "test" {
   name                = "${var.application_type}-${var.resource_type}"
   location            = "${var.location}"
   resource_group_name = "${var.resource_group}"
-  os_type             = "Linux"
-  sku_name            = "B1"
+  os_type             = "Windows"
+  sku_name            = "P1v2"
+  #os_type             = "Linux"
+  #sku_name            = "F1"
+
 }
 
 resource "azurerm_windows_web_app" "test" {
