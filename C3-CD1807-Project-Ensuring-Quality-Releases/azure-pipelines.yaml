@@ -196,13 +196,6 @@ stages:
                 ls -lisah $(Pipeline.Workspace)/perftests
                 ls -lisah $(Pipeline.Workspace)/perftests/endurance-test-report
 
-          # Publish - Endurance Test Suite
-          - task: publishhtmlreport@1
-            displayName: 'Publish Endurance Test Results'
-            inputs:
-              htmlType: 'Jmeter'
-              JmeterReportsPath: '$(Pipeline.Workspace)/perftests/endurance-test-report'
-
           # Jmeter - Stress Test Suite    
           - task: Bash@3
             displayName: 'Stress Test Suite'
@@ -217,12 +210,12 @@ stages:
                 ls -lisah $(Pipeline.Workspace)/perftests
                 ls -lisah $(Pipeline.Workspace)/perftests/stress-test-report
                   
-          # Publish - Stress Test Suite
+          # Publish - Test Reports
           - task: publishhtmlreport@1
-            displayName: 'Publish Stress Test Results'
+            displayName: 'Publish Test Results'
             inputs:
               htmlType: 'Jmeter'
-              JmeterReportsPath: '$(Pipeline.Workspace)/perftests/stress-test-report'   
+              JmeterReportsPath: '$(Pipeline.Workspace)/perftests/endurance-test-report,$(Pipeline.Workspace)/perftests/stress-test-report'
 
           # Print Performance Test Logs
           - task: Bash@3
@@ -230,8 +223,6 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                ls -lisah $(Pipeline.Workspace)/perftests/endurance-test-report/
-                ls -lisah $(Pipeline.Workspace)/perftests/stress-test-report
                 cat jmeter.log
               
   #--------------------------------------------#  
