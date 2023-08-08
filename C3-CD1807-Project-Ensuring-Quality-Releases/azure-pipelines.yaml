@@ -179,7 +179,8 @@ stages:
               script: |
                 ls -lisah $(Pipeline.Workspace)
                 ls -lisah $(Pipeline.Workspace)/drop-perftests
-                unzip -o $(Pipeline.Workspace)/drop-perftests/$(Build.BuildId)-perftests.zip
+                unzip -o $(Pipeline.Workspace)/drop-perftests/$(Build.BuildId)-perftests.zip -d $(Pipeline.Workspace)/perftests
+                ls -lisah $(Pipeline.Workspace)/perftests
 
           # Jmeter - Endurance Test Suite     
           - task: Bash@3
