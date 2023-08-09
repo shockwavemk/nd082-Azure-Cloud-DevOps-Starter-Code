@@ -223,9 +223,15 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                rm -rf /home/azureuser/app/perftests || echo "not existing"
-                cp -R $(Pipeline.Workspace)/perftests /home/azureuser/app
                 cat jmeter.log
+
+          - task: ArchiveFiles@2
+            displayName: 'Archive Test reports'
+            inputs:
+              rootFolderOrFile: '$(Pipeline.Workspace)/perftests'
+              includeRootFolder: false
+              archiveType: 'zip'
+              archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests-results.zip'      
               
   #--------------------------------------------#  
   # Selenium | Functional UI Tests
