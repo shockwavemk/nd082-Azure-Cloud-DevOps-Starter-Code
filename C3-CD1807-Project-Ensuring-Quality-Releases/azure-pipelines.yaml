@@ -215,7 +215,7 @@ stages:
             displayName: 'Publish Test Results'
             inputs:
               htmlType: 'Jmeter'
-              JmeterReportsPath: '$(Pipeline.Workspace)/perftests/endurance-test-report,$(Pipeline.Workspace)/perftests/stress-test-report'
+              JmeterReportsPath: '$(Pipeline.Workspace)/perftests/stress-test-report'
 
           # Print Performance Test Logs
           - task: Bash@3
