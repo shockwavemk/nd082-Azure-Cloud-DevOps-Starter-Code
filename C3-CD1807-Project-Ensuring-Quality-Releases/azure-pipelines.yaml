@@ -231,7 +231,11 @@ stages:
               rootFolderOrFile: '$(Pipeline.Workspace)/perftests'
               includeRootFolder: false
               archiveType: 'zip'
-              archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests-results.zip'      
+              archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests-results.zip'
+
+          - publish: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId)-perftests-results.zip'
+            displayName: 'Upload Test reports'
+            artifact: drop-perftests-results    
               
   #--------------------------------------------#  
   # Selenium | Functional UI Tests
