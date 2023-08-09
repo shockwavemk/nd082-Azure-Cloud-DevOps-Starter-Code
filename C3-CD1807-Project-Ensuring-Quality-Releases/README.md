@@ -8,3 +8,9 @@ This repository contains the starter code for the **Ensuring Quality Releases** 
 
 ## Suggestions and Corrections
 Feel free to submit PRs to this repo should you have any proposed changes. 
+
+## Results
+
+Performance test results html can be found in 55-perftest-results.zip
+
+Screenshots in folder screenshots

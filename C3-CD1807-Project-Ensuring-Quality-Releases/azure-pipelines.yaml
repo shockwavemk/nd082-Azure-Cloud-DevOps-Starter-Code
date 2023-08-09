@@ -153,13 +153,13 @@ stages:
           - download: current
             artifact: drop-fakerestapi
 
-          #- task: AzureWebApp@1
-          #  displayName: 'Deploy Azure Web App'
-          #  inputs:
-          #    azureSubscription: '$(azureServiceConnectionId)'
-          #    appName: 'udacityc3-AppService'
-          #    appType: webApp
-          #    package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
+          - task: AzureWebApp@1
+            displayName: 'Deploy Azure Web App'
+            inputs:
+              azureSubscription: '$(azureServiceConnectionId)'
+              appName: 'udacityc3-AppService'
+              appType: webApp
+              package: $(Pipeline.Workspace)/drop-fakerestapi/$(Build.BuildId)-fakerestapi.zip
 
           #--------------------------------------------#
           - download: current
