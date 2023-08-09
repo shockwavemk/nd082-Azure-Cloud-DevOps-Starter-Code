@@ -223,6 +223,8 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
+                rm -rf /home/azureuser/app/perftests || echo "not existing"
+                cp -R $(Pipeline.Workspace)/perftests /home/azureuser/app
                 cat jmeter.log
               
   #--------------------------------------------#  
